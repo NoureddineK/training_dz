@@ -1,0 +1,12 @@
+{
+  "configurations": [
+    {
+      "name": "training dz",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "flutterMode": "debug",
+      "args": []
+    },
+  ]
+}
