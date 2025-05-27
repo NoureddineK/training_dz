@@ -14,9 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
-      ),
+      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.red)),
       home: const MyHomePage(title: 'Flutter Demo'),
     );
   }
@@ -89,23 +87,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-            Positioned(child: Text('Hello there'), top: 70, left: 150),
+            Positioned(top: 70, left: 150, child: Text('Hello there')),
             Text('$_counter', style: Theme.of(context).textTheme.titleLarge),
             GestureDetector(
               // onTap: _incrementCounter,
               onLongPress: _incrementCounter,
               onDoubleTap: _incrementCounter,
-              child: Text(
-                'Increment',
-                style: TextStyle(fontSize: 40, color: Colors.blue),
-              ),
+              child: Text('Increment', style: TextStyle(fontSize: 40, color: Colors.blue)),
             ),
             IconButton(onPressed: _incrementCounter, icon: Icon(Icons.add)),
-            FilledButton(
-              onPressed: _incrementCounter,
-
-              child: Text('FilledButton', style: GoogleFonts.getFont('Lato')),
-            ),
+            FilledButton(onPressed: _incrementCounter, child: Text('FilledButton', style: GoogleFonts.getFont('Lato'))),
             TextButton(onPressed: _incrementCounter, child: Text('TextButton')),
           ],
         ),
