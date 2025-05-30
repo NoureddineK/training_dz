@@ -46,3 +46,12 @@ Connectez un appareil ou démarrez un émulateur :
  ├── widgets/          # Composants réutilisables
  ├── models/           # Models de données
  └── services/         # Appels API, logique métier, etc.
+
+
+
+fix user + signup page + login page if not the user error.
+add stadium + logout.
+
+Refactoriser l’app précédente :asset
+•	Créer un dossier models, providers, screens, widgets
+•	Séparer les responsabilités : UI, logique métier, données

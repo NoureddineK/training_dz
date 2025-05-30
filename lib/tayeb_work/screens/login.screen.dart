@@ -20,7 +20,7 @@ class _LogInPageState extends State<LogInPage> {
   @override
   void initState() {
     isVisible = false;
-    isChecked = false;
+    isChecked = true;
     super.initState();
   }
 

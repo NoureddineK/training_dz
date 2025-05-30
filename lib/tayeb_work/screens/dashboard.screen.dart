@@ -126,9 +126,10 @@ class _DashboardPageState extends State<DashboardPage> {
       ),
 
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         actions: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+            padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
             child: IconButton(
               constraints: BoxConstraints.tight(Size.fromRadius(22)),
               padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
@@ -137,7 +138,7 @@ class _DashboardPageState extends State<DashboardPage> {
             ),
           ),
         ],
-        leadingWidth: 15,
+        leadingWidth: 0,
         elevation: 4,
         title: ProfileWidget(name: widget.name),
       ),
@@ -148,7 +149,10 @@ class _DashboardPageState extends State<DashboardPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Padding(padding: const EdgeInsets.all(10.0), child: BackButton(onPressed: () {})),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: IconButton(onPressed: () {}, icon: Icon(Icons.logout)),
+                ),
 
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
@@ -165,7 +169,7 @@ class _DashboardPageState extends State<DashboardPage> {
 
                 Padding(
                   padding: const EdgeInsets.fromLTRB(14, 10, 10, 10),
-                  child: IconButton.filled(iconSize: 24, onPressed: () {}, icon: Icon(Icons.sort)),
+                  child: IconButton.filled(iconSize: 24, onPressed: () {}, icon: Icon(Icons.sort_sharp)),
                 ),
               ],
             ),
@@ -221,12 +225,18 @@ class _DashboardPageState extends State<DashboardPage> {
                 ),
 
                 itemBuilder: (BuildContext context, int index) {
-                  return cardTileWidget(
-                    title: mylist[index].title,
-                    image: mylist[index].image,
-                    playerNum: mylist[index].playerNum,
-                    isFavorite: mylist[index].isFavorite,
-                    isJoined: mylist[index].isJoined,
+                  return Column(
+                    children: [
+                      IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+
+                      cardTileWidget(
+                        title: mylist[index].title,
+                        image: mylist[index].image,
+                        playerNum: mylist[index].playerNum,
+                        isFavorite: mylist[index].isFavorite,
+                        isJoined: mylist[index].isJoined,
+                      ),
+                    ],
                   );
                 },
               ),
