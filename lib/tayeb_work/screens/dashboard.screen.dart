@@ -229,7 +229,7 @@ class _DashboardPageState extends State<DashboardPage> {
                     children: [
                       IconButton(onPressed: () {}, icon: Icon(Icons.add)),
 
-                      cardTileWidget(
+                      CardTileWidget(
                         title: mylist[index].title,
                         image: mylist[index].image,
                         playerNum: mylist[index].playerNum,

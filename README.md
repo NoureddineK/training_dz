@@ -55,3 +55,5 @@ add stadium + logout.
 Refactoriser l’app précédente :asset
 •	Créer un dossier models, providers, screens, widgets
 •	Séparer les responsabilités : UI, logique métier, données
+
+dart run build_runner build --delete-conflicting-outputs

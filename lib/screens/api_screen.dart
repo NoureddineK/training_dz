@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:training_dz/models/country.model.dart';
+import 'package:training_dz/models/country.model.extension.dart';
 
 class ApiFetchScreen extends StatefulWidget {
   const ApiFetchScreen({super.key});
@@ -11,7 +13,7 @@ class ApiFetchScreen extends StatefulWidget {
 }
 
 class _ApiFetchScreen extends State<ApiFetchScreen> {
-  List<dynamic> countries = [];
+  List<CountryModel> countries = [];
   bool isloading = true;
   @override
   void initState() {
@@ -26,7 +28,8 @@ class _ApiFetchScreen extends State<ApiFetchScreen> {
     if (response.statusCode == 200) {
       final List data = json.decode(response.body);
       setState(() {
-        countries = data;
+        countries = data.map((item) => CountryModel.fromMap(item)).toList();
+
         isloading = false;
       });
     } else {
@@ -51,13 +54,23 @@ class _ApiFetchScreen extends State<ApiFetchScreen> {
                 itemCount: countries.length,
                 itemBuilder: (context, index) {
                   final country = countries[index];
-                  final name = country['name']?['common'] ?? 'inconnu';
-                  final flags = country['flags']?['png'] ?? '';
                   return Card(
-                    child: ListTile(
-                      title: Text(name),
-                      leading: Image.network(flags, width: 60, height: 40),
-                      contentPadding: EdgeInsets.all(16),
+                    child: Column(
+                      children: [
+                        ListTile(
+                          trailing: Text("Population: \n${country.population}"),
+                          title: Text(country.name),
+                          subtitle: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Languages: ${country.formattedLangs}"),
+                              Text("Continents: ${country.formattedContin}"),
+                            ],
+                          ),
+                          leading: Image.network(country.imageUrl, width: 60, height: 40),
+                          contentPadding: EdgeInsets.all(16),
+                        ),
+                      ],
                     ),
                   );
                 },
