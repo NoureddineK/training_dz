@@ -8,7 +8,7 @@ part of 'country.model.dart';
 
 CountryModel _$CountryModelFromJson(Map<String, dynamic> json) => CountryModel(
   name: json['name'] as String,
-  imageUrl: json['imageUrl'] as String,
+  imageUrl: json['url'] as String,
   continents:
       (json['continents'] as List<dynamic>).map((e) => e as String).toList(),
   languages:
@@ -19,7 +19,7 @@ CountryModel _$CountryModelFromJson(Map<String, dynamic> json) => CountryModel(
 Map<String, dynamic> _$CountryModelToJson(CountryModel instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'imageUrl': instance.imageUrl,
+      'url': instance.imageUrl,
       'population': instance.population,
       'languages': instance.languages,
       'continents': instance.continents,

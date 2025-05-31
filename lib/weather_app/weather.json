@@ -1,0 +1,44 @@
+{
+  "coord": {
+    "lon": 1.65,
+    "lat": 28
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "ciel dégagé",
+      "icon": "01d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 35.69,
+    "feels_like": 32.95,
+    "temp_min": 35.69,
+    "temp_max": 35.69,
+    "pressure": 1013,
+    "humidity": 10,
+    "sea_level": 1013,
+    "grnd_level": 951
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 10.39,
+    "deg": 43,
+    "gust": 11.07
+  },
+  "clouds": {
+    "all": 0
+  },
+  "dt": 1748702788,
+  "sys": {
+    "country": "DZ",
+    "sunrise": 1748667458,
+    "sunset": 1748717094
+  },
+  "timezone": 3600,
+  "id": 2482605,
+  "name": "Sahela Foukania",
+  "cod": 200
+}
