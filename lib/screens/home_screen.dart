@@ -22,14 +22,12 @@ class _HomeScreenState extends State<HomeScreen> {
         CakeModel(
           name: "Chocolate Icing Cake",
           price: 9.99,
-          imageUrl:
-              "https://cdn.pixabay.com/photo/2015/03/27/04/55/cupcake-694328_1280.jpg",
+          imageUrl: "https://cdn.pixabay.com/photo/2015/03/27/04/55/cupcake-694328_1280.jpg",
         ),
         CakeModel(
           name: "Black Forest Icing Cake",
           price: 5.12,
-          imageUrl:
-              "https://cdn.pixabay.com/photo/2020/03/10/03/49/red-velvet-cake-4917734_1280.jpg",
+          imageUrl: "https://cdn.pixabay.com/photo/2020/03/10/03/49/red-velvet-cake-4917734_1280.jpg",
         ),
       ];
     });
@@ -43,26 +41,22 @@ class _HomeScreenState extends State<HomeScreen> {
       CakeModel(
         name: "Happy Birthday Icing Cake",
         price: 4.29,
-        imageUrl:
-            "https://cdn.pixabay.com/photo/2017/03/14/05/49/small-cake-2142072_1280.jpg",
+        imageUrl: "https://cdn.pixabay.com/photo/2017/03/14/05/49/small-cake-2142072_1280.jpg",
       ),
       CakeModel(
         name: "Wedding Cakes Customized",
         price: 6.48,
-        imageUrl:
-            "https://cdn.pixabay.com/photo/2017/06/27/14/41/cake-2447535_1280.jpg",
+        imageUrl: "https://cdn.pixabay.com/photo/2017/06/27/14/41/cake-2447535_1280.jpg",
       ),
       CakeModel(
         name: " Red velvet cake",
         price: 10.20,
-        imageUrl:
-            "https://cdn.pixabay.com/photo/2019/01/28/10/08/red-velvet-cake-3960016_1280.jpg",
+        imageUrl: "https://cdn.pixabay.com/photo/2019/01/28/10/08/red-velvet-cake-3960016_1280.jpg",
       ),
       CakeModel(
         name: "Cup cakes",
         price: 4.70,
-        imageUrl:
-            "https://cdn.pixabay.com/photo/2017/01/09/16/37/cup-cakes-1966958_1280.jpg",
+        imageUrl: "https://cdn.pixabay.com/photo/2017/01/09/16/37/cup-cakes-1966958_1280.jpg",
       ),
     ];
 
@@ -85,29 +79,13 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: EdgeInsets.all(12),
         child: Column(
           children: [
-            CircleAvatar(
-              backgroundImage:
-                  Image.asset(
-                    "assets/images/camel.jpg",
-                    fit: BoxFit.cover,
-                  ).image,
-            ),
+            CircleAvatar(backgroundImage: Image.asset("assets/images/camel.jpg", fit: BoxFit.cover).image),
             const SizedBox(width: 10),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                Text(
-                  "Monica",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  "Edit my profile",
-                  style: TextStyle(color: Colors.black, fontSize: 12),
-                ),
+                Text("Monica", style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold)),
+                Text("Edit my profile", style: TextStyle(color: Colors.black, fontSize: 12)),
               ],
             ),
             // const Spacer(),
@@ -122,29 +100,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
         title: Row(
           children: [
-            CircleAvatar(
-              backgroundImage:
-                  Image.asset(
-                    "assets/images/camel.jpg",
-                    fit: BoxFit.cover,
-                  ).image,
-            ),
+            CircleAvatar(backgroundImage: Image.asset("assets/images/camel.jpg", fit: BoxFit.cover).image),
             const SizedBox(width: 10),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                Text(
-                  "Hi, Monica",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Text(
-                  "Find and Get Your Best Cake",
-                  style: TextStyle(color: Colors.grey, fontSize: 12),
-                ),
+                Text("Hi, Monica", style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold)),
+                Text("Find and Get Your Best Cake", style: TextStyle(color: Colors.grey, fontSize: 12)),
               ],
             ),
             // const Spacer(),
@@ -165,32 +127,24 @@ class _HomeScreenState extends State<HomeScreen> {
                     decoration: InputDecoration(
                       hintText: 'Search',
                       prefixIcon: const Icon(Icons.search),
+                      suffixIcon: const Icon(Icons.clear),
                       fillColor: Colors.grey[200],
                       filled: true,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: BorderSide.none,
-                      ),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.circular(30), borderSide: BorderSide.none),
                     ),
                   ),
                 ),
                 const SizedBox(width: 10),
                 Container(
                   padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.orange,
-                    borderRadius: BorderRadius.circular(16),
-                  ),
+                  decoration: BoxDecoration(color: Colors.orange, borderRadius: BorderRadius.circular(16)),
                   child: const Icon(Icons.tune, color: Colors.white),
                 ),
               ],
             ),
             const SizedBox(height: 20),
 
-            const Text(
-              "Browse By Category",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-            ),
+            const Text("Browse By Category", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
             const SizedBox(height: 10),
 
             Row(
@@ -206,8 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: GridView.builder(
                 itemCount: cakes.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount:
-                      MediaQuery.of(context).size.width > 500 ? 4 : 2,
+                  crossAxisCount: MediaQuery.of(context).size.width > 500 ? 4 : 2,
                   childAspectRatio: 0.7,
                   crossAxisSpacing: 12,
                   mainAxisSpacing: 12,
@@ -217,6 +170,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       onTap: () => print('index: $index'),
                       onDoubleTap: () => deleteCake(index: index),
                       child: CakeCard(
+                        priceChanged: (value) => print("Price clicked: $value"),
                         name: cakes[index].name,
                         price: cakes[index].price,
                         imageUrl: cakes[index].imageUrl,
@@ -234,14 +188,8 @@ class _HomeScreenState extends State<HomeScreen> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.store), label: "Shop"),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border),
-            label: "Favorite",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: "Person",
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: "Favorite"),
+          BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: "Person"),
         ],
       ),
     );
@@ -259,10 +207,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           if (isSelected) const Icon(Icons.cake, color: Colors.white, size: 16),
           if (isSelected) const SizedBox(width: 4),
-          Text(
-            label,
-            style: TextStyle(color: isSelected ? Colors.white : Colors.black),
-          ),
+          Text(label, style: TextStyle(color: isSelected ? Colors.white : Colors.black)),
         ],
       ),
     );

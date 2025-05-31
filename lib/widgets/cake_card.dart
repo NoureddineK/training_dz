@@ -5,10 +5,12 @@ class CakeCard extends StatelessWidget {
   final double price;
   final String imageUrl;
   final int? tva;
+  final ValueChanged<double>? priceChanged;
 
   const CakeCard({
     super.key,
     this.tva,
+    this.priceChanged,
     required this.name,
     required this.price,
     required this.imageUrl,
@@ -20,34 +22,20 @@ class CakeCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 2)),
-        ],
+        boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 2))],
       ),
       padding: const EdgeInsets.only(bottom: 12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(12),
-              topRight: Radius.circular(12),
-            ),
-            child: Image.network(
-              imageUrl,
-              height: 120,
-              width: double.infinity,
-              fit: BoxFit.cover,
-            ),
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(12), topRight: Radius.circular(12)),
+            child: Image.network(imageUrl, height: 120, width: double.infinity, fit: BoxFit.cover),
           ),
           const SizedBox(height: 5),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Text(
-              name,
-              style: const TextStyle(fontWeight: FontWeight.bold),
-              maxLines: 2,
-            ),
+            child: Text(name, style: const TextStyle(fontWeight: FontWeight.bold), maxLines: 2),
           ),
           const Spacer(),
           Padding(
@@ -55,11 +43,11 @@ class CakeCard extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text(
-                  "\$${price.toStringAsFixed(2)}",
-                  style: const TextStyle(
-                    color: Colors.orange,
-                    fontWeight: FontWeight.bold,
+                TextButton(
+                  onPressed: () => priceChanged!(price),
+                  child: Text(
+                    "\$${price.toStringAsFixed(2)}",
+                    style: const TextStyle(color: Colors.orange, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Spacer(),
@@ -67,10 +55,7 @@ class CakeCard extends StatelessWidget {
                   alignment: Alignment.bottomRight,
                   child: Container(
                     padding: const EdgeInsets.all(6),
-                    decoration: const BoxDecoration(
-                      color: Colors.orange,
-                      shape: BoxShape.circle,
-                    ),
+                    decoration: const BoxDecoration(color: Colors.orange, shape: BoxShape.circle),
                     child: Icon(Icons.add, color: Colors.white, size: 16),
                   ),
                 ),

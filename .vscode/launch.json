@@ -8,5 +8,13 @@
       "flutterMode": "debug",
       "args": []
     },
+    {
+      "name": "Signup App",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/exercice_2/main.dart",
+      "flutterMode": "debug",
+      "args": []
+    },
   ]
 }
