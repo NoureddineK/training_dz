@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:training_dz/screens/api_screen.dart';
 import 'package:training_dz/screens/home_screen.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class CakeApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Cake App',
       theme: ThemeData(fontFamily: 'Roboto'),
-      home: const HomeScreen(),
+      home: const ApiFetchScreen(),
     );
   }
 }
