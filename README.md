@@ -57,3 +57,7 @@ Refactoriser l’app précédente :asset
 •	Séparer les responsabilités : UI, logique métier, données
 
 dart run build_runner build --delete-conflicting-outputs
+
+https://api.openweathermap.org/data/2.5/forecast?lat=28&lon=1.65&appid=3e91b23035bb7138a9b108ec503d928f 
+
+https://api.openweathermap.org/data/2.5/weather?lat=28&lon=1.65&units=metric&lang=fr&appid=3e91b23035bb7138a9b108ec503d928f

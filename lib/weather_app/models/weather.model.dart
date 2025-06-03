@@ -8,13 +8,13 @@ class WeatherModel {
   // @JsonKey(name: 'url')
   double temp;
   String description;
-  // DateTime date;
+  DateTime date;
   String city;
 
   WeatherModel({
     required this.iconId,
     required this.description,
-    // required this.date,
+    required this.date,
     required this.city,
     required this.temp,
   });
@@ -23,17 +23,12 @@ class WeatherModel {
 
   factory WeatherModel.fromMap(Map<String, dynamic> data) {
     final iconId = data['weather'][0]['icon'];
-    final imageUrl = data['flags']?['png'] ?? '';
-    final continents = (data['continents'] as List?) ?? [];
-    final languages = (data['languages'] as Map<String, dynamic>?) ?? {};
-    final population = data['population'] as int;
-    return WeatherModel(
-      iconId: iconId,
-      imageUrl: imageUrl,
-      continents: continents.cast<String>(),
-      languages: languages.values.cast<String>().toList(),
-      population: population,
-    );
+    // final imageUrl = data['flags']?['png'] ?? '';
+    final temp = data['main']['temp'];
+    final description = data['weather'][0]['description'];
+    final city = data['name'] + '  -  ${data['sys']['country']}';
+    final date = DateTime.fromMillisecondsSinceEpoch(data['dt'] * 1000);
+    return WeatherModel(iconId: iconId, temp: temp, description: description, city: city, date: date);
   }
 
   Map<String, dynamic> toJson() => _$WeatherModelToJson(this);

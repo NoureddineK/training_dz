@@ -1,24 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'weather.model.dart';
+part of 'forcast.model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-WeatherModel _$WeatherModelFromJson(Map<String, dynamic> json) => WeatherModel(
+ForcastModel _$ForcastModelFromJson(Map<String, dynamic> json) => ForcastModel(
   iconId: json['iconId'] as String,
   description: json['description'] as String,
-  date: DateTime.parse(json['date'] as String),
-  city: json['city'] as String,
+  datetime: DateTime.parse(json['datetime'] as String),
   temp: (json['temp'] as num).toDouble(),
 );
 
-Map<String, dynamic> _$WeatherModelToJson(WeatherModel instance) =>
+Map<String, dynamic> _$ForcastModelToJson(ForcastModel instance) =>
     <String, dynamic>{
       'iconId': instance.iconId,
       'temp': instance.temp,
       'description': instance.description,
-      'date': instance.date.toIso8601String(),
-      'city': instance.city,
+      'datetime': instance.datetime.toIso8601String(),
     };
